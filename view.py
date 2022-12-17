@@ -11,7 +11,6 @@ def main_menu():
     return choice_main_menu()
 
 
-
 def choice_main_menu():
     while True:
         try:
@@ -22,3 +21,17 @@ def choice_main_menu():
                 print('Такого пункта нет, повторите попытку!')
         except:
             print('Ошибка ввода, некорректные данные!')
+
+def lof_off():
+    print('Спасибо и всего хорошЕГО!')
+
+def load_success():
+    print('Телефонная книга загружена!')
+
+def print_phone_book(phone_book: list):
+    if len(phone_book) > 0:
+        for id, contact in enumerate(phone_book, 1):
+            print(id, *contact)
+    else:
+        print('Телефонная книга пуста или не загружена')
+
