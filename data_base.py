@@ -8,9 +8,21 @@ def load_data_base():
         pb.set_phone_book(str_to_list(phone_book))
 
 def str_to_list(ph_book: str):
-    new_book = []
+    new_phone_book = []
     for contact in ph_book:
-        new_book.append(contact.strip().split(';'))
-    return new_book
+        new_phone_book.append(contact.strip().split(';'))
+    return new_phone_book
+
+def save_data_base():
+    with open(path, 'w', encoding='UTF-8') as file:
+        file.write(list_to_str())
+
+def list_to_str():
+    phone_book = pb.get_phone_book()
+    new_phone_book = []
+    for contact in phone_book:
+        new_phone_book.append(';'.join(contact) + '\n')
+    new_phone_book[-1] = new_phone_book[-1][:-1]
+    return ''.join(new_phone_book)
 
 
