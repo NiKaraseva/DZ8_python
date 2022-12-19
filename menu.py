@@ -42,14 +42,11 @@ def main_menu(choice: int):
                 view.remove_success()
         case 7:
             find = view.find_contact()
-            new_phone_book = pb.find_contact(find)
-            for contact in new_phone_book:
-                if contact in new_phone_book == 0:
-                    view.print_zero_contact()
-                elif contact in new_phone_book == 1:
-                    view.print_new_book_by_find(*new_phone_book)
-                else:
-                    view.print_new_book_by_find(new_phone_book)
+            new_phone_book = pb.find_contact(find) # тут находим контакт
+            if pb.find_contact(find): # проверяем, есть ли контакт в нашем справочнике
+                view.print_new_book_by_find(*new_phone_book) # (!) вот тут не получилось сделать красивый вывод: если ставить * и поисковик найдёт более 1 контакта – выдаёт ошибку (на 1 контакт работает). Есть другой способ вывести красиво?
+            else:
+                view.print_zero_contact()
         case 0:
             return True
 

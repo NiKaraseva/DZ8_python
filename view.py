@@ -92,13 +92,13 @@ def input_remove_contact():
 def remove_success():
     print('Контакт успешно удалён!')
 
-def find_contact():
+def find_contact(): # спрашиваем, кого хотим найти
     find = input('Кого хотим найти?: ')
     return find
 
-def print_new_book_by_find(new_phone_book: list):
+def print_new_book_by_find(new_phone_book: list): # печатаем, кого нашли
     print(f'Вы искали:')
     print(*new_phone_book)
 
-def print_zero_contact():
+def print_zero_contact(): # выводим сообщение, если по поиску ничего найти не удалось
     print('Такого контакта в справочнике нет')

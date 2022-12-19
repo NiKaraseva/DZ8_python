@@ -36,11 +36,22 @@ def remove_contact(id: int):
         return True
     return False
 
-def find_contact(find: str):
+def find_contact(find: str): # функция поиска контакта
     global phone_book
     new_phone_book = []
+    count = 0
     for contact in phone_book:
         for item in contact:
             if find in item:
                 new_phone_book.append(contact)
-    return new_phone_book
+                count += 1
+    if count > 0:
+        return new_phone_book
+    else:
+        return False
+
+
+
+
+
+
