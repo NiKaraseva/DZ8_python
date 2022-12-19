@@ -2,6 +2,7 @@ import view
 import data_base as db
 import phone_book as pb
 
+
 def main_menu(choice: int):
     match choice:
         case 1:
